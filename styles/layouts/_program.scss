@@ -1,0 +1,60 @@
+
+.program{
+    @include flex ($direction:column,$wrap:nowrap,$justify-content:center, $align-items:center);
+    @include spaceling(150px auto, 10px);
+    align-content: center;
+    max-width: 500px;
+    &__container{
+        @include flex ($wrap:nowrap,$justify-content:space-around, $align-items:center);
+        @include spaceling(40px);
+        @include colorized($background-color:$color-principal);
+        align-content: center;
+        border-radius: 25px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px;
+        height: 80px;
+        width: 100%;
+    }
+    &__resultadoDiv{
+        @include spaceling(20px);
+        @include colorized($background-color:$color-principal);
+        @include text-as(100px, $text-align:center);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        border-radius: 25px;
+        height: 150px;
+        width: 100%;
+    }
+    &__text{
+        @include spaceling(0 auto);
+        @include colorized($color-principal);
+        @include text-as($font-size:50px);
+        text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+    }
+    &__input{
+        @include spaceling(10px);
+        @include colorized($color-secondary);
+        @include text-as($font-size:18px);
+        outline: none;
+        border-bottom: 1px solid grey;
+        width: 50%;
+        height: 50px;
+    }
+    &__button{
+        @include spaceling(10px, 5px);
+        @include colorized($color-principal, $color-thrid);
+        width: 20%;
+        height: 50px;
+        border-radius: 15px;
+        border: solid 1px $color-secondary;
+        &:hover{
+            cursor: pointer;
+            @include colorized($background-color:$color-fourth);
+        }
+    }
+    &__resultado{
+        @include spaceling(10px);
+        @include colorized($color-secondary);
+        @include text-as($font-size:100px, $text-align:center);
+    }
+  }
+  
+  

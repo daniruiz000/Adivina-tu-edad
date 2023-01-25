@@ -1,86 +1,188 @@
+@charset "UTF-8";
+/* Reseteamos los margin y paddings de todas las etiquetas */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  background: linear-gradient(to right, #ebc6a0 0%, #8fbaad 100%);
-  width: 100%;
-  height: 100vh;
-}
-
-.calculator {
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 10px;
-  border-radius: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-}
-.calculator__screen {
-  width: 100%;
-  height: 80px;
-  background-color: #424242;
-  border-radius: 15px;
-  padding: 10px 20px;
-  grid-area: 1/1/1/5;
-  overflow: hidden;
-}
-.calculator__result {
-  margin: 0;
-  color: #fff;
-  font-size: 50px;
-  text-align: right;
-}
-.calculator__grid {
-  background-color: #85d9ec;
-  border-radius: 15px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
-}
-
-.button {
-  height: 60px;
-  background-color: #fff;
   border: 0;
-  border-radius: 15px;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* opcional */
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   background-color: transparent;
-  font-size: 3rem;
+  color: inherit;
+  display: block;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/*FONTS*/
+/* Configuramos la tipografía para toda la web */
+body {
+  margin: 0 auto;
+  min-height: 100vh;
+  font-size: 100%;
+  max-width: 1440px;
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
   font-family: monospace;
-  color: #333;
-  background: #eaeaea;
+}
+
+.program {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 150px auto;
+  padding: 10px;
+  align-content: center;
+  max-width: 500px;
+}
+.program__container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px;
+  padding: 0;
+  color: white;
+  background-color: white;
+  align-content: center;
+  border-radius: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px;
+  height: 80px;
+  width: 100%;
+}
+.program__resultadoDiv {
+  margin: 20px;
+  padding: 0;
+  color: white;
+  background-color: white;
+  font-size: 100px;
+  font-weight: normal;
+  text-decoration: none;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 10px;
+  font-style: initial;
+  text-transform: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 25px;
+  height: 150px;
+  width: 100%;
 }
-.button:hover {
-  cursor: pointer;
-  background-color: rgb(245, 205, 205);
+.program__text {
+  margin: 0 auto;
+  padding: 0;
+  color: white;
+  background-color: transparent;
+  font-size: 50px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: initial;
+  font-style: initial;
+  text-transform: none;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
 }
-.button--operator {
-  color: #3197dc;
+.program__input {
+  margin: 10px;
+  padding: 0;
+  color: black;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: initial;
+  font-style: initial;
+  text-transform: none;
+  outline: none;
+  border-bottom: 1px solid grey;
+  width: 50%;
+  height: 50px;
 }
-.button--clear {
-  background-color: #e6c20f;
+.program__button {
+  margin: 10px;
+  padding: 5px;
+  color: white;
+  background-color: #8c8a4a;
+  width: 20%;
+  height: 50px;
   border-radius: 15px;
-  color: #fff;
+  border: solid 1px black;
 }
-.button--clear:hover {
+.program__button:hover {
   cursor: pointer;
-  background-color: #937725;
+  color: white;
+  background-color: #414022;
 }
-.button--equal {
-  background-color: #3767e1;
-  border-radius: 15px;
-  color: #fff;
-  height: 100%;
-  grid-area: 3/4/7/5;
-}
-.button--equal:hover {
-  cursor: pointer;
-  background-color: #162c63;
+.program__resultado {
+  margin: 10px;
+  padding: 0;
+  color: black;
+  background-color: transparent;
+  font-size: 100px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  font-style: initial;
+  text-transform: none;
 }/*# sourceMappingURL=styles.css.map */
