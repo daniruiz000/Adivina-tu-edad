@@ -86,7 +86,7 @@ body {
   font-size: 100%;
   max-width: 1440px;
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-  font-family: monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .program {
@@ -163,7 +163,7 @@ body {
   margin: 10px;
   padding: 5px;
   color: white;
-  background-color: #8c8a4a;
+  background-color: rgb(235, 235, 235);
   width: 20%;
   height: 50px;
   border-radius: 15px;
@@ -172,7 +172,7 @@ body {
 .program__button:hover {
   cursor: pointer;
   color: white;
-  background-color: #414022;
+  background-color: gray;
 }
 .program__resultado {
   margin: 10px;

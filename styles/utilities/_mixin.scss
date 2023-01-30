@@ -23,3 +23,8 @@
     font-style: $font-style;
     text-transform: $text-transform;
 }
+@mixin media-querys($screen){
+    @media screen and (min-width:$screen) {
+        @content;
+    }
+}
